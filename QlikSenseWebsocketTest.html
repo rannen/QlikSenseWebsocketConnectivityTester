@@ -90,6 +90,12 @@ if (regexpResults != null) {
     var virtualProxy = "";
 }
 
+//Detect Reverse Proxy Mapping
+var rpm = path.split('/')[1];
+if (rpm != virtualProxy){
+                virtualProxy = rpm + "/" + virtualProxy;
+}
+
 if (protocol == "https:") {
     var isSecure = true;
     document.getElementById("ConnectedWSDiv").style.display = 'none';
